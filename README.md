@@ -1,47 +1,87 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19656901&assignment_repo_type=AssignmentRepo)
 # MongoDB Fundamentals Assignment
 
-This assignment focuses on learning MongoDB fundamentals including setup, CRUD operations, advanced queries, aggregation pipelines, and indexing.
+## Overview
 
-## Assignment Overview
+This assignment demonstrates my understanding of MongoDB fundamentals, including:
 
-You will:
-1. Set up a MongoDB database
-2. Perform basic CRUD operations
-3. Write advanced queries with filtering, projection, and sorting
-4. Create aggregation pipelines for data analysis
-5. Implement indexing for performance optimization
+- MongoDB setup and configuration
+- Creating databases and collections
+- Performing basic CRUD operations
+- Writing advanced queries with filtering, projection, sorting, and pagination
+- Using aggregation pipelines for data analysis
+- Implementing indexing for performance optimization
 
-## Getting Started
+## Setup Instructions
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+### Prerequisites
+
+- Node.js v18 or higher installed
+- MongoDB Community Edition installed locally **OR** a MongoDB Atlas account set up
+- MongoDB Shell (`mongosh`) or MongoDB Compass installed
+
+### Installation and Setup
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/PLP-MERN-Stack-Development/week-1-mongodb-fundamentals-assignment-ValerieMbaka.git
+   cd week-1-mongodb-fundamentals-assignment-ValerieMbaka
+   ```
+
+2. Install dependencies (if any, currently none needed for running the script):
+   ```bash
+   npm install
+   ```
+
+3. Make sure MongoDB is running locally or connect to your Atlas cluster.
+
+4. Run the script to insert sample book data into the `plp_bookstore` database:
+   ```bash
+   node insert_books.js
+   ```
+
+5. Use the queries in `queries.js` to perform CRUD operations, advanced queries, aggregation, and indexing.
 
 ## Files Included
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+- `insert_books.js`: Script to populate the MongoDB `books` collection with sample data.
+- `queries.js`: Contains all MongoDB queries written for the assignment covering basic CRUD, advanced filtering, aggregation pipelines, and indexing.
+- `README.md`: This file with setup instructions and assignment overview.
 
-## Requirements
+## Sample Data
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+The `books` collection contains books with the following fields:
 
-## Submission
+- `title` (string)
+- `author` (string)
+- `genre` (string)
+- `published_year` (number)
+- `price` (number)
+- `in_stock` (boolean)
+- `pages` (number)
+- `publisher` (string)
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+## How to Run
 
-1. Complete all tasks in the assignment
-2. Add your `queries.js` file with all required MongoDB queries
-3. Include a screenshot of your MongoDB database
-4. Update the README.md with your specific setup instructions
+1. Ensure MongoDB service is running.
+2. Run the data insertion script with:
+   ```bash
+   node insert_books.js
+   ```
+3. Open MongoDB Shell (`mongosh`) or MongoDB Compass.
+4. Execute the queries from `queries.js` in the shell or Compass query tab to see the results.
 
-## Resources
+## Screenshot
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+Include a screenshot of your MongoDB Compass or Atlas view showing the `books` collection with sample data. Save it as `screenshots/mongodb_books_collection.png` in this repository.
+
+Example:
+
+![MongoDB Compass screenshot](./booksdb.png)
+
+## Notes
+
+- Indexes were created on `title` and a compound index on `author` and `published_year` fields to optimize query performance.
+- The `explain()` method was used on queries to demonstrate performance improvements due to indexing.
+
+---
